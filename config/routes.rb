@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:create]
 
 
-  resources :burgers, only: [:index]
+  resources :equipments, only: [:index]
   resources :users, only: [:create, :show]
   post "/login", to: "users#login"
   get "/persist", to: "users#persist"
