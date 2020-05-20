@@ -32,10 +32,10 @@ ActiveRecord::Schema.define(version: 2020_05_18_135241) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "ordernum"
-    t.integer "users_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_orders_on_users_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,5 +47,5 @@ ActiveRecord::Schema.define(version: 2020_05_18_135241) do
 
   add_foreign_key "equipment_orders", "equipment"
   add_foreign_key "equipment_orders", "orders"
-  add_foreign_key "orders", "users", column: "users_id"
+  add_foreign_key "orders", "users"
 end
