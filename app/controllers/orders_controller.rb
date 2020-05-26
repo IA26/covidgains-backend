@@ -12,13 +12,9 @@ class OrdersController < ApplicationController
       # @new_order = @user.orders.create
       @new_order = @user.orders.create
 
-      @username = @user
+      @equipment =  params[:equipment_ids]
 
-
-      params[:equipment_ids].each do |equipment_id|
-        EquipmentOrder.create(equipment_id: equipment_id, order: @new_order)
-      end
-  
+      EquipmentOrder.create(equipment_id: @equipment['id'], order: @new_order)
   
       render json: @new_order
     end
