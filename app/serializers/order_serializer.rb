@@ -1,4 +1,4 @@
 class OrderSerializer < ActiveModel::Serializer
-  attributes :id, :niceTimestampForGrandma
+  attributes :id, :timeStamp
   has_many :equipment_orders
 end
